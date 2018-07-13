@@ -14,6 +14,9 @@ function CalcularPrecio ()
 var valor;
 var cantidad;
 var marca;
+var descuento;
+var precioD;
+var impuesto;
 
 valor=35;
 
@@ -23,71 +26,100 @@ marca = document.getElementById('Marca').value;
 
 cantidad = parseInt(cantidad);
 
+
+
 if (cantidad >= 6) {
 
-valor = (valor*6)/2
+descuento = (valor*cantidad)/2;
 
-document.getElementById('precioDescuento').value=valor;
+precioD=(valor*cantidad)-(descuento);
+
+document.getElementById('precioDescuento').value = precioD;
+
 
 }
 
 if (cantidad == 5 && marca == "ArgentinaLuz" ) {
 
-valor = ((valor*5)/10)*4;
+descuento = ((valor*cantidad)/10)*4;
 
-document.getElementById('precioDescuento').value=valor;
+precioD=(valor*cantidad)-(descuento);
+
+document.getElementById('precioDescuento').value=precioD;
+
+}else if (cantidad == 5) {
+
+descuento = ((valor*cantidad)/10)*3;
+
+valor=(valor*cantidad)-(descuento);
+
+precioD=valor+(valor/10);
+
+document.getElementById('precioDescuento').value=precioD;
+
+impuesto = (valor/10);
+
+alert("IIBB Usted pago "+impuesto);
 
 }
 
-if (cantidad == 5) {
+if (cantidad == 4 && marca == "ArgentinaLuz") {
 
-valor = ((valor*5)/10)*30;
+descuento = (valor*cantidad)/4;
 
-document.getElementById('precioDescuento').value=valor;
+precioD=(valor*cantidad)-(descuento);
 
+document.getElementById('precioDescuento').value=precioD;
 
-}
+}else if (cantidad == 4 && marca == "FelipeLamparas") {
 
-if (cantidad == 4 && marca == "ArgentinaLuz" || "FelipeLamparas") {
+descuento = (valor*cantidad)/4;
 
-valor = ((valor*4)/100)*25;
+precioD = (valor*cantidad)-(descuento);
 
-document.getElementById('precioDescuento').value=valor;
+document.getElementById('precioDescuento').value=precioD;
 
-}
+}else if (cantidad == 4) {
 
-if (cantidad == 4) {
+descuento = (valor*cantidad)/5;
 
-valor = ((valor*4)/10)*2;
+precioD = (valor*cantidad)-(descuento);
 
-document.getElementById('precioDescuento').value=valor;
-
+document.getElementById('precioDescuento').value=precioD;
 
 }
 
 if (cantidad == 3 && marca == "ArgentinaLuz") {
 
-	valor = ((valor*3)/100)*15;
+	descuento = ((valor*cantidad)/100)*15;
 
-document.getElementById('precioDescuento').value=valor;
+precioD=(valor*cantidad)-(descuento);
+
+document.getElementById('precioDescuento').value=precioD;
+
+}else if (cantidad == 3 && marca == "FelipeLamparas") {
+
+descuento = (valor*cantidad)/10;
+
+precioD=(valor*cantidad)-(descuento);
+
+document.getElementById('precioDescuento').value=precioD;
+
+}else if (cantidad == 3) {
+
+descuento = ((valor * cantidad)/100)*5;
+
+precioD=(valor*cantidad)-(descuento);
+
+document.getElementById('precioDescuento').value=precioD;
 
 }
 
-if (cantidad == 3 && marca == "FelipeLamparas") {
 
-valor = (valor*3)/10;
 
-document.getElementById('precioDescuento').value=valor;
 
-}
 
-if (cantidad == 3) {
 
-valor = ((valor * 3)/100)*5;
-
-document.getElementById('precioDescuento').value=valor;
-
-}
 
 
 
