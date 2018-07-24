@@ -6,7 +6,8 @@ var ContadorDePerdidas=0;
 function comenzar()
 {
 	eleccionMaquina=Math.floor((Math.random()*3)-1);//Genero el número RANDOM entre 1 y 3
-	 	
+	alert("comenzamos"); 
+
 
 
 
@@ -65,5 +66,10 @@ if (eleccionMaquina == tijera) {
 
 function mostrarResultado()
 {
-comenzar();
+
+document.getElementById('Empate').value="Empate";
+document.getElementById('Ganaste').value="Ganaste";
+document.getElementById('Perdiste').value="Perdiste";
+
+
 }
